@@ -6,7 +6,25 @@ import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 import { useTheme } from 'next-themes'
 
-function MorphingLines({ count = 40, separation = 1, lineWidth = 0.5, color, opacity = 0.3, speed = 0.2, amplitude = 1 }) {
+interface MorphingLinesProps {
+  count?: number;
+  separation?: number;
+  lineWidth?: number;
+  color?: string | THREE.Color;
+  opacity?: number;
+  speed?: number;
+  amplitude?: number;
+}
+
+function MorphingLines({ 
+  count = 40, 
+  separation = 1, 
+  lineWidth = 0.5, 
+  color, 
+  opacity = 0.3, 
+  speed = 0.2, 
+  amplitude = 1 
+}: MorphingLinesProps) {
   const points = useMemo(() => {
     const pts = []
     for (let i = 0; i < count; i++) {
@@ -17,10 +35,11 @@ function MorphingLines({ count = 40, separation = 1, lineWidth = 0.5, color, opa
     return pts
   }, [count, separation])
 
-  const lineRef = useRef()
+  const lineRef = useRef<THREE.Line<THREE.BufferGeometry, THREE.Material | THREE.Material[]>>(null)
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime()
+    if (!lineRef.current) return
     const positions = lineRef.current.geometry.attributes.position
     
     for (let i = 0; i < positions.count; i++) {
@@ -37,7 +56,7 @@ function MorphingLines({ count = 40, separation = 1, lineWidth = 0.5, color, opa
   })
 
   return (
-    <line ref={lineRef}>
+    <primitive object={new THREE.Line()} ref={lineRef}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -47,7 +66,7 @@ function MorphingLines({ count = 40, separation = 1, lineWidth = 0.5, color, opa
         />
       </bufferGeometry>
       <lineBasicMaterial color={color} linewidth={lineWidth} transparent opacity={opacity} />
-    </line>
+    </primitive>
   )
 }
 
