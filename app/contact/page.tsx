@@ -103,9 +103,10 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold">Address</h3>
                       <p className="text-muted-foreground">
-                        123 Innovation Drive<br />
-                        Suite 200<br />
-                        San Francisco, CA 94105
+                        12653 Hillmeade Station Drive<br />
+                        Bowie<br />
+                        MD 20720<br />
+                        United States
                       </p>
                     </div>
                   </div>
@@ -114,7 +115,7 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">1-855-684-1767</p>
                     </div>
                   </div>
 
@@ -122,7 +123,7 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">contact@volkmannexpress.com</p>
+                      <p className="text-muted-foreground">info@volkmannexpress.com</p>
                     </div>
                   </div>
 

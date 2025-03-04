@@ -114,6 +114,28 @@ export default function Cybersecurity() {
                   "Backup & Recovery",
                   "Data Classification"
                 ]
+              },
+              {
+                icon: Laptop,
+                title: "Cyber Investigations",
+                description: "Forensic analysis and incident response",
+                features: [
+                  "Digital Forensics",
+                  "Malware Analysis",
+                  "Incident Reporting",
+                  "Legal Support"
+                ]
+              },
+              {
+                icon: Scan,
+                title: "Security Operations Center",
+                description: "24/7 monitoring and incident response",
+                features: [
+                  "Alert Monitoring",
+                  "Threat Hunting",
+                  "Incident Response",
+                  "Compliance"
+                ]
               }
             ].map((service, index) => (
               <motion.div

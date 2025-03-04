@@ -126,9 +126,9 @@ export default function Privacy() {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p>
-              Email: privacy@volkmannexpress.com<br />
-              Phone: +1 (555) 123-4567<br />
-              Address: 123 Innovation Drive, Suite 200, San Francisco, CA 94105
+              Email: info@volkmannexpress.com<br />
+              Phone: 1-855-684-1767<br />
+              Address: 12653 Hillmeade Station Drive, Bowie, MD 20720, United States
             </p>
           </CardContent>
         </Card>
